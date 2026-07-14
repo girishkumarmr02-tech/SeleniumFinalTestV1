@@ -22,17 +22,18 @@ public class DriverFactory {
                 driver = new FirefoxDriver();
                 break;
 
-            case "chrome":
 
+            case "edge":
+                WebDriverManager.edgedriver().setup();
+                driver = new EdgeDriver();
+                break;
+
+            case "chrome":
+            default:
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 break;
 
-            case "edge":
-            default:
-                WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
-                break;
         }
 
         driver.manage().window().maximize();
