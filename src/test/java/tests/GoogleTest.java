@@ -1,7 +1,7 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import tests.BaseTest;
 
 public class GoogleTest extends BaseTest {
 
@@ -10,6 +10,12 @@ public class GoogleTest extends BaseTest {
 
         driver.get("https://www.google.com");
 
-        System.out.println(driver.getTitle());
+        String title = driver.getTitle();
+
+        System.out.println(title);
+
+        Assert.assertTrue(title.contains("Google"));
+
     }
+
 }
